@@ -7,7 +7,6 @@ import { Submenu } from "@/components/Home/Submenu";
 import { getDataHome, getSubMenu } from "@/utils/actions/get-data";
 import { HomeProps } from "@/utils/home.type";
 import { Phone } from "lucide-react";
-import { Footer } from "@/components/Footer";
 import { MenuProps } from "@/utils/menu.type";
 
 
@@ -29,7 +28,6 @@ export default async function Home() {
         <About object={object} />
         <Services object={object} />
         <Contact object={object} />
-        <Footer object={object} />
       </Container>
     </main>
   );

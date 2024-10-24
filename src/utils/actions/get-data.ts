@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation"
+
 export async function getDataHome() {
     try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/objects/671a2d99f37f2376cff52270?read_key=${process.env.READ_KEY}&depth=1&props=slug,title,metadata`, { next: { revalidate: 120 } });
@@ -50,6 +52,7 @@ export async function getItemBySlug(itemSlug: string) {
         return res.json();
 
     } catch (err) {
-        throw new Error("Failed to fetch data")
+        console.log(err);
+        redirect("/")
     }
 }

@@ -29,11 +29,11 @@ export function Header() {
                         <Link href="/">
                             HOME
                         </Link>
-                        <Link href="/#servicos">
-                            SERVIÇOS
+                        <Link href="/#sobre">
+                            SOBRE
                         </Link>
-                        <Link href="/#contatos">
-                            CONTATOS
+                        <Link href="/#servicos">
+                            SERVICOS
                         </Link>
                     </nav>
                 </div>

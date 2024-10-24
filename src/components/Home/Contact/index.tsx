@@ -38,6 +38,14 @@ export function Contact({ object }: HomeProps) {
                     </div>
                 </div>
             </section>
+            <a
+                href={object.metadata.cta_button.url}
+                target='_blank'
+                className={styles.link}
+            >
+                <Phone size={24} color='#fff' />
+                {object.metadata.cta_button.title}
+            </a>
         </main>
     )
 }
