@@ -7,9 +7,17 @@ import { Phone } from 'lucide-react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 
-export async function generateMetadata({ params: { slug } }: {
-  params: { slug: string }  
-}): Promise<Metadata> {
+export async function generateMetadata(
+    props: {
+      params: Promise<{ slug: string }>  
+    }
+): Promise<Metadata> {
+    const params = await props.params;
+
+    const {
+        slug
+    } = params;
+
     try {
         const { objects }: PostProps = await getItemBySlug(slug)
         .catch(() => {
@@ -22,6 +30,7 @@ export async function generateMetadata({ params: { slug } }: {
         return {
             title: `DevMotors - ${objects[0].title}`,
             description: `${objects[0].metadata.description.text}`,
+            keywords:["devmotors", "troca de oleo", "devmotors troca de oleo"],
             openGraph: {
                 title: `DevMotors - ${objects[0].title}`,
                 images: [objects[0].metadata.banner.url]
